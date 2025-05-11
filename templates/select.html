@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Movie{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="heading">Select Movie</h1>
+    {% for movie in movies %}
+    <p class="select-links">
+      <a href="{{ url_for('single_movie', id=movie.id) }}">{{ movie.original_title }} - {{ movie.release_date }}</a>
+    </p>
+  {% endfor %}
+  <a href="{{ url_for('home') }}"> <- Back home</a>
+</div>
+{% endblock %}
